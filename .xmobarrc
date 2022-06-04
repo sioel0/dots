@@ -1,0 +1,15 @@
+Config { font = "xft:Fira Code:size=10:retina:antialias=true"
+        , borderColor = "#2E3440"
+        , border = TopB
+        , bgColor = "#2E3440"
+        , fgColor = "#D8DEE9"
+        , position = Bottom
+        , commands = [ Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                     , Run StdinReader
+                     , Run Com "/home/sioel0/.scripts/battery" [] "battery" 50
+                     , Run Com "/home/sioel0/.scripts/volume" [] "volume" 1 
+                     ]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template = "%StdinReader% }| <fc=#D08770>%date%</fc> |{ | %volume% | <fc=#A3BE8C>%battery%</fc>"
+        }

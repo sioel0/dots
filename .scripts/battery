@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ $(acpi | grep "Battery 0" | cut -d' ' -f3 | cut -d, -f1) == "Charging" ]; then
+  bat=$(acpi | grep "Battery 0" | cut -d' ' -f4 | cut -d, -f1)
+elif [ $(acpi | grep "Battery 0" | cut -d' ' -f3) == "Not" ]; then
+  bat=$(acpi | grep "Battery 0" | cut -d' ' -f5 | cut -d, -f1)
+else
+  bat=$(acpi | grep "Battery 0" | cut -d' ' -f4-5 | cut -d, -f1-2)
+fi
+
+echo "Bat: $bat"

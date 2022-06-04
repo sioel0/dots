@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while true;
+do
+
+  BATTERY=$(/home/sioel0/.scripts/battery)
+  DATE=$(/home/sioel0/.scripts/caldate)
+  TIME=$(/home/sioel0/.scripts/hour)
+  VOLUME=$(/home/sioel0/.scripts/volume)
+  
+  xsetroot -name "$VOLUME | $DATE | $TIME | $BATTERY"
+  sleep 5
+
+done

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [[ $(xrandr | grep HDMI | grep disconnected) == '' ]]; then
+  /home/sioel0/.screenlayout/monitor.sh
+fi
