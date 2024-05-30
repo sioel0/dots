@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# destination file
+DEST=~/Pictures/Screenshots/screenshot_$(date +%F-%H:%M:%S).png
+
+declare -a options=(
+"Full screen"
+"Region"
+)
+
+CHOICE=$(printf '%s\n' "${options[@]}" | tofi --prompt-text "Screenshot" -c /home/sioel0/.config/tofi/shutdown)
+echo $CHOICE
+
+if [[ $CHOICE == "Region" ]]; then
+  if [[ $GEOM == "selection cancelled" ]]; then
+    exit -1
+  else
+    grim -g "$(slurp)" - | wl-copy
+    exit 0
+  fi
+elif [[ $CHOICE == "Full screen" ]]; then
+  grim - | wl-copy
+  exit 0
+else
+  exit -1
+fi

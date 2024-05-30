@@ -1,0 +1,19 @@
+font = monospace
+font-size = 20
+
+background-color = #24273a
+text-color = #cad3f5
+selection-color = #eed49f
+outline-color = #eed49f
+outline-width = 1
+border-width = 0
+prompt-text = ""
+num-results = 3
+width = 250
+height = 200
+anchor = top-right
+margin-top = 15
+margin-right = 15
+result-spacing = 10
+padding-left = 60
+corner-radius = 5

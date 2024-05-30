@@ -1,0 +1,23 @@
+#!/bin/bash
+
+declare -a options=(
+"logout"
+"reboot"
+"poweroff"
+)
+CHOICE=$(printf '%s\n' "${options[@]}" | tofi -c /home/sioel0/.config/tofi/shutdown)
+
+case $CHOICE in
+  'logout')
+    hyprctl dispatch exit
+  ;;
+  'reboot')
+    systemctl reboot
+  ;;
+  'poweroff')
+    systemctl poweroff
+  ;;
+  *)
+    exit 0
+  ;;
+esac
