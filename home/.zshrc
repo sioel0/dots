@@ -87,6 +87,9 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --style=numbers ${(Q)realpath}'
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':fzf-tab:complete:cd:*' popup-min-size 80 12
+zstyle ':fzf-tab*' popup-min-size 50 8
 
 # General aliases
 alias ls='eza --color=always'
